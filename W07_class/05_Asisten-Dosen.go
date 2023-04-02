@@ -17,24 +17,21 @@ func main() {
     n = 0
 
     for i = 0; i < 10; i++ {
-        addNasabah(&T, n)
-
-        if n < N {
-            n++
-        }
+        addNasabah(&T, &n)
     }
 
     fmt.Scan(&x)
     cetak(T, n, x)
 }
 
-func addNasabah(T *[N]tabNasabah, n int) {
+func addNasabah(T *[N]tabNasabah, n *int) {
     var t tabNasabah
 
     fmt.Scan(&t.kode, &t.nasabah, &t.bank, &t.rekening)
 
-    if n < N {
-        *&T[n] = t
+    if *n < N {
+        *&T[*n] = t
+        *n++
     } else {
         fmt.Println("data penuh")
     }
