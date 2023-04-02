@@ -17,6 +17,10 @@ func main() {
 
 func inputBilangan(bil *int) {
     fmt.Scan(bil)
+
+    for *bil < 0 {
+        fmt.Scan(bil)
+    }
 }
 
 func stop(bil int) bool {
@@ -34,19 +38,16 @@ func hitung(mean *float64, min, max, n *int) {
     inputBilangan(&x)
 
     for !stop(x) {
-        if x > 0 {
-            if *min > x || *n == 0 {
-                *min = x
-            }
-
-            if *max < x {
-                *max = x
-            }
-
-            total += x
-            *n++
+        if *min > x || *n == 0 {
+            *min = x
         }
 
+        if *max < x {
+            *max = x
+        }
+
+        total += x
+        *n++
         inputBilangan(&x)
     }
 

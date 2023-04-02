@@ -19,10 +19,6 @@ func average(bil, i int, hasil *float64) {
             *hasil = 0
         }
     } else {
-        if i == 1 {
-            *hasil = 0
-        }
-
         *hasil = *hasil + float64(bil % 10)
         average(bil / 10, i+1, hasil)
     }
