@@ -22,9 +22,14 @@ func main() {
 
 func isiData(T *tabBunga, n int) {
     var i int
+    var s string
 
     for i = 0; i < n; i++ {
-        fmt.Scan(*&T[i])
+        fmt.Scan(&s)
+
+        if i < N {
+            *&T[i] = s
+        }
     }
 }
 
