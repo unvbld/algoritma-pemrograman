@@ -70,6 +70,6 @@ func deleteBunga(T *tabBunga, n int, bunga string) {
             idx++
         }
 
-        *&T[n] = ""
+        *&T[n-1] = ""
     }
 }
