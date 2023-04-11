@@ -13,11 +13,11 @@ func main() {
     fmt.Scan(&n)
     isiData(&T, n)
 
-    fmt.Println(T)
+    fmt.Println(T[:n])
     renameBunga(&T, n, "lily", "tulip")
-    fmt.Println(T)
+    fmt.Println(T[:n])
     deleteBunga(&T, n, "tulip")
-    fmt.Println(T)
+    fmt.Println(T[:n])
 }
 
 func isiData(T *tabBunga, n int) {
