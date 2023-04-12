@@ -31,7 +31,7 @@ func binarySearch(tab tabInt, n, x int) int {
     right = n - 1
     mid = (n - 1) / 2
 
-    for mid != left || mid != right {
+    for mid != left && mid != right {
         if x < tab[mid] {
             right = mid
         } else if x > tab[mid] {
