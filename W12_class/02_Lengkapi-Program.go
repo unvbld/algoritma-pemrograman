@@ -14,8 +14,8 @@ func main() {
 
     inputArray(&array1)
     inputArray(&array2)
-    sort(&array1)
-    sort(&array2)
+    sortArray(&array1)
+    sortArray(&array2)
 
     fmt.Println(isSimilar(array1, array2))
 }
@@ -35,7 +35,7 @@ func inputArray(T *intArray) {
     }
 }
 
-func sort(T *intArray) {
+func sortArray(T *intArray) {
     var idx int
 
     for i := 0; i < T.N-1; i++ {
