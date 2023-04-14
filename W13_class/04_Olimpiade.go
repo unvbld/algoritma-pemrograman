@@ -52,27 +52,23 @@ func tampilArray(T olimpiade, n int) {
     }
 }
 
-func poin(g, s, b int) int {
+func poin1(g, s, b int) int {
     return 4*g + 3*s + b
 }
 
+func poin2(p peserta) int {
+    return (4 * p.g) + (3 * p.s) + p.b
+}
+
 func sorting(T *olimpiade, n int) {
-    var i, idx, poin1, poin2 int
+    var i, idx int
 
     for i = 1; i < n; i++ {
         idx = i
-        poin1 = poin(T[idx].g, T[idx].s, T[idx].b)
-        poin2 = poin(T[idx-1].g, T[idx-1].s, T[idx-1].b)
 
-        for idx > 0 && poin1 > poin2 {
+        for idx > 0 && poin2(T[idx]) > poin2(T[idx-1]) {
             T[idx], T[idx-1] = T[idx-1], T[idx]
-
             idx--
-
-            if idx > 0 {
-                poin1 = poin(T[idx].g, T[idx].s, T[idx].b)
-                poin2 = poin(T[idx-1].g, T[idx-1].s, T[idx-1].b)
-            }
         }
     }
 }
