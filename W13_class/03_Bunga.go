@@ -56,11 +56,6 @@ func isiArray(tabBunga *arrayBunga, n *int) {
     *tabBunga = arrayBunga{}
 
     fmt.Scan(&n1)
-
-    if n1 == 0 {
-        return
-    }
-
     fmt.Scan(&s)
     
     for i = 0; i < n1; i++ {

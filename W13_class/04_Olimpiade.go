@@ -29,11 +29,6 @@ func isiArray(T *olimpiade, n *int) {
     *T = olimpiade{}
 
     fmt.Scan(n)
-
-    if *n == 0 {
-        return
-    }
-
     fmt.Scan(&t.tim, &t.g, &t.s, &t.b)
 
     for i = 0; i < *n; i++ {
