@@ -4,12 +4,14 @@ import "fmt"
 
 const N int = 2022
 
-type tabNasabah struct {
+type nasabah struct {
     kode, nasabah, bank, rekening string
 }
 
+type tabNasabah [N]nasabah
+
 func main() {
-    var T [N]tabNasabah
+    var T tabNasabah
     var x string
     var n, i int
 
@@ -17,30 +19,27 @@ func main() {
     n = 0
 
     for i = 0; i < 10; i++ {
-        addNasabah(&T, n)
-
-        if n < N {
-            n++
-        }
+        addNasabah(&T, &n)
     }
 
     fmt.Scan(&x)
     cetak(T, n, x)
 }
 
-func addNasabah(T *[N]tabNasabah, n int) {
-    var t tabNasabah
+func addNasabah(T *tabNasabah, n *int) {
+    var t nasabah
 
     fmt.Scan(&t.kode, &t.nasabah, &t.bank, &t.rekening)
 
-    if n < N {
-        *&T[n] = t
+    if *n < N {
+        *&T[*n] = t
+        *n++
     } else {
         fmt.Println("data penuh")
     }
 }
 
-func cetak(T [N]tabNasabah, n int, x string) {
+func cetak(T tabNasabah, n int, x string) {
     var i int
 
     for i = 0; i < n; i++ {
