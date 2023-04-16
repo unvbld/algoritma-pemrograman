@@ -36,12 +36,12 @@ func inputArray(T *intArray) {
 }
 
 func sortArray(T *intArray) {
-    var idx int
+    var idx, i, j int
 
-    for i := 0; i < T.N-1; i++ {
+    for i = 0; i < T.N-1; i++ {
         idx = i
 
-        for j := i+1; j < T.N; j++ {
+        for j = i+1; j < T.N; j++ {
             if T.tabInt[idx] > T.tabInt[j] {
                 idx = j
             }

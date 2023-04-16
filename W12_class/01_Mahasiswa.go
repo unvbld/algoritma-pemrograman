@@ -37,12 +37,12 @@ func main() {
 }
 
 func sortGPA(T *tabMhs, n int) {
-    var idx int
+    var idx, i, j int
 
-    for i := 0; i < n-1; i++ {
+    for i = 0; i < n-1; i++ {
         idx = i
 
-        for j := i+1; j < n; j++ {
+        for j = i+1; j < n; j++ {
             if T[idx].gpa > T[j].gpa {
                 idx = j
             }
@@ -53,7 +53,9 @@ func sortGPA(T *tabMhs, n int) {
 }
 
 func cetakGPA(T tabMhs, n int) {
-    for i := 0; i < n; i++ {
+    var i int
+    
+    for i = 0; i < n; i++ {
         fmt.Print(T[i].gpa, " ")
     }
 
