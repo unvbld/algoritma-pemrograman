@@ -19,6 +19,7 @@ func main() {
     var n int
     var mk string
 
+    fmt.Scan(&mk)
     BacaAsDos(&tabel, &n)
     CetakAsDos(tabel, n, mk)
 }
